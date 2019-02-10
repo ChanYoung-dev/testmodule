@@ -4,10 +4,6 @@ Module.register("MMM-Test", {
     },
     start: function () {
         this.count = 0
-        var timer = setInterval(()=>{
-            this.updateDom()
-            this.count++
-        }, 1000)
     },
     getDom: function() {
         var element = document.createElement("div")
@@ -19,6 +15,17 @@ Module.register("MMM-Test", {
         element.appendChild(subElement)
         return element
     },
-    notificationReceived: function() {},
+    notificationReceived: function(notification, payload, sender) {
+        switch(notification){
+            case "DOM_OBJECTS_CREATED":
+                var timer = setInterval(()=>{
+                    this.updateDom()
+                    this.count++
+                }, 1000)
+                break
+            }
+    },
+    
+    
     socketNotificationReceived: function() {},
   })
