@@ -19,8 +19,13 @@ Module.register("MMM-Test", {
         switch(notification){
             case "DOM_OBJECTS_CREATED":
                 var timer = setInterval(()=>{
+                    var countElm = document.getElementById("COUNT")
+                    countElm.innerHTML= "Count:" + this.count
+                    this.count++
+                    /*
                     this.updateDom()
                     this.count++
+                    */
                 }, 1000)
                 break
             }
