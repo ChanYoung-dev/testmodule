@@ -20,16 +20,15 @@ notificationReceived: function(notification, payload, sender) {
     var elem = document.getElementById("TEST")
     elem.addEventListener("click", function(){
     elem.innerHTML = "TEST2"
-    this.sendNotification('CHANGE_POSITIONS_DEFAULTS','')
-    }) 
     this.sendNotification('CHANGE_POSITIONS', 
     modules = {
         'clock':{
             visible: 'true',
             position: 'top_left',
-        },
-    }
-);
+            },
+       }
+      )
+    })     
       break
   }
 },
